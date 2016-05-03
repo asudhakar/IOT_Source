@@ -21,6 +21,7 @@ switch ($input) {
 		break;
 }
 function insert($value, $conn){
+	echo "$value";
 	$sql = "INSERT INTO app1 (fromapp) VALUES('".$value."')";
 	return execute_query($conn, $query);
 }
