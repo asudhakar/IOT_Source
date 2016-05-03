@@ -4,8 +4,9 @@ $conn = db_connect();
 $input = $_GET['input'];
 switch ($input) {
 	case 'servo':
-		insert(1, $conn);
-		echo "1 inserted";
+		if(insert(1, $conn)){
+			echo "1 inserted";
+		}
 		break;
 	case 'mp3':
 		insert(2, $conn);
@@ -21,5 +22,5 @@ switch ($input) {
 }
 function insert($value, $conn){
 	$sql = "INSERT INTO app1 (fromapp) VALUES('".$value."')";
-	execute_query($conn, $query);
+	return execute_query($conn, $query);
 }
