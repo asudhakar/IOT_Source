@@ -1,7 +1,7 @@
 
 <?php
 $dbusername="root";
-$dbpassword="icradle";
+$dbpassword="shibi123";
 $server="localhost";
 $dbname = "project";
 
