@@ -24,5 +24,6 @@ function insert($value, $conn){
 	echo $value;
 	$sql = "INSERT INTO app1 (fromapp) VALUES('".$value."')";
 	echo "$sql";
-	return execute_query($conn, $query);
+	mysqli_query($conn,$query);
+	return true;
 }
