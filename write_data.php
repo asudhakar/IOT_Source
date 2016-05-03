@@ -1,18 +1,9 @@
 <?php
-$dbusername="root";
-$dbpassword="shibi123";
-$server="localhost";
-$dbname = "project";
-$moisture = $_GET['moisture'];
-$mic = $_GET['mic'];
-
-$conn = mysqli_connect($server, $dbusername, $dbpassword, $dbname);
-
+include_once 'functions.php';
+$conn = db_connect();
 $sql="INSERT INTO icradle (moisture, mic) VALUES ('".$moisture."','".$mic."')";
-mysqli_query($conn, $sql);
+execute_query($conn, $sql);
 
-echo "success";
-?>
 
 
 
