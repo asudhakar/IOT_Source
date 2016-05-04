@@ -1,6 +1,9 @@
 <?php 
-include_once 'functions.php';
-$conn = db_connect();
+$dbusername="root";
+$dbpassword="shibi123";
+$server="localhost";
+$dbname = "project";
+$conn = mysqli_connect($server, $dbusername, $dbpassword, $dbname);
 $input = $_GET['input'];
 switch ($input) {
 	case 'servo':
@@ -24,6 +27,6 @@ function insert($value, $conn){
 	echo $value;
 	$sql = "INSERT INTO app1 (fromapp) VALUES('".$value."')";
 	echo "$sql";
-	mysqli_query($conn,$query);
+	mysqli_query($conn, $sql);
 	return true;
 }

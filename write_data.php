@@ -1,14 +1,18 @@
 <?php
-include_once 'functions.php';
-$conn = db_connect();
+$dbusername="root";
+$dbpassword="shibi123";
+$server="localhost";
+$dbname = "project";
 $moisture = $_GET['moisture'];
 $mic = $_GET['mic'];
-$sql="INSERT INTO icradle (moisture, mic) VALUES ('".$moisture."','".$mic."')";
-print_r($conn);
-if(mysqli_query($conn,$query)){
-	echo "Inserted";
-}
 
+$conn = mysqli_connect($server, $dbusername, $dbpassword, $dbname);
+
+$sql="INSERT INTO icradle (moisture, mic) VALUES ('".$moisture."','".$mic."')";
+mysqli_query($conn, $sql);
+
+echo "success";
+?>
 
 
 
