@@ -1,7 +1,7 @@
 
 <?php
 $dbusername="root";
-$dbpassword="shibi123";
+$dbpassword="icradle";
 $server="localhost";
 $dbname = "project";
 
@@ -38,7 +38,7 @@ if($is_query=mysqli_query($conn,$query)){
 	   
 }
 function curl_operation($unit){
-	$url = "http://192.168.0.112/?".$unit;
+	$url = "http://192.168.0.112/?".$unit;//ethernet
 	echo $url;
 	// create a new cURL resource
 	$ch = curl_init();

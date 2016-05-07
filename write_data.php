@@ -1,6 +1,6 @@
 <?php
 $dbusername="root";
-$dbpassword="shibi123";
+$dbpassword="icradle";
 $server="localhost";
 $dbname = "project";
 $moisture = $_GET['moisture'];

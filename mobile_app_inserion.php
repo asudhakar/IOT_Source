@@ -1,6 +1,6 @@
 <?php 
 $dbusername="root";
-$dbpassword="shibi123";
+$dbpassword="icradle";
 $server="localhost";
 $dbname = "project";
 $conn = mysqli_connect($server, $dbusername, $dbpassword, $dbname);
@@ -9,6 +9,7 @@ switch ($input) {
 	case 'servo':
 		if(insert(1, $conn)){
 			inserted();
+			call_url();
 		} else{
 			not_inserted();
 		}
@@ -16,6 +17,7 @@ switch ($input) {
 	case 'mp3':
 		if(insert(2, $conn)){
 			inserted();
+			call_url();
 		} else{
 			not_inserted();
 		}
@@ -23,6 +25,7 @@ switch ($input) {
 	case 'blower':
 		if(insert(3, $conn)){
 			inserted();
+			call_url();
 		} else{
 			not_inserted();
 		}
@@ -47,3 +50,11 @@ function not_inserted(){
 	echo json_encode($arr);
 }
 
+function call_url(){
+	$url = "http://192.168.0.106:8080/icradle/dba1.php";//system
+	$ch = curl_init();
+	curl_setopt($ch, CURLOPT_URL, $url);
+	curl_setopt($ch, CURLOPT_HEADER, 0);
+	curl_exec($ch);
+	curl_close($ch);
+}
